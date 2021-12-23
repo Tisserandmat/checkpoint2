@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr"
+           xmlns:th="http://www.thymeleaf.org"
+           xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/_layout}">>
+<head>
+    <meta charset="UTF-8">
+    <title>all destinate</title>
+</head>
+<body>
+<div>
+    <div  th:each="destination : ${destinations}">
+        <p th:text="${destination.getCountry()}"/>
+        <p th:text="${destination.getStartDate()}"/>
+        <p th:text="${destination.getStartDate()}"/>
+        <button>edit</button>
+        <a th:href="@{/deleteDest/{id}(id=${destination.id})}" type="submit">delete</a>
+        <hr>
+    </div>
+
+</div>
+</body>
+</html>

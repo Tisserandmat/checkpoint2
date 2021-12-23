@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/_layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form method="POST" th:action="@{/save}" th:object="${destination}">
+        <h1>Ajouter une Destination</h1>
+        <input name="id" th:field="${destination.id}" type="hidden">
+        <input type="text" placeholder="ajoute une destination" th:field="*{country}">
+        <input type="date"  th:field="*{startDate}">
+        <input type="date"  th:field="*{endDate}">
+        <button type="submit">envoyer</button>
+
+    </form>
+</div>
+
+
+</body>
+</html>
